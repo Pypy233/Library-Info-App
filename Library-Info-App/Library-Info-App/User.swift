@@ -24,6 +24,10 @@ class User {
         self.bio = bio
         self.overduePayment = overduePayment
     }
+    
+    public func accept(visitor: UserVisitor) {
+    
+    }
 
 
     public func getOverduePayment() -> Double {

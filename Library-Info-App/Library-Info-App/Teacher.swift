@@ -14,7 +14,7 @@ class Teacher: User {
     }
     
     override func getOverduePayment() -> Double {
-        return overduePayment * 0.5
+        return 0
     }
 
 }

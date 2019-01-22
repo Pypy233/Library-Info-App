@@ -40,4 +40,16 @@ class Admin: UserVisitor {
         }
     }
     
+    func observeUserInfoUpdated() {
+        NotificationCenter.default.addObserver(self, selector: Selector("Accept notification"), name: NSNotification.Name(rawValue: "User information updated"), object: nil)
+    }
+    
+    func acceptNotification(notification: NSNotification) {
+        _ = notification.userInfo!
+        print("Received the user updated info....")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
