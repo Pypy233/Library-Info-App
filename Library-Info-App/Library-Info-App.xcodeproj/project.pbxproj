@@ -13,6 +13,14 @@
 		0C3BB5FD21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C3BB5FB21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld */; };
 		0C3BB5FF21F4CEBE00FAE618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3BB5FE21F4CEBE00FAE618 /* Assets.xcassets */; };
 		0C3BB60221F4CEBE00FAE618 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3BB60021F4CEBE00FAE618 /* LaunchScreen.storyboard */; };
+		0CA4EBEB21F6E506009AB2FA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBEA21F6E506009AB2FA /* Book.swift */; };
+		0CA4EBED21F6E795009AB2FA /* BookVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBEC21F6E795009AB2FA /* BookVisitor.swift */; };
+		0CA4EBEF21F6E805009AB2FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBEE21F6E805009AB2FA /* User.swift */; };
+		0CA4EBF421F6FA38009AB2FA /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBF321F6FA38009AB2FA /* Teacher.swift */; };
+		0CA4EBF621F6FF12009AB2FA /* Undergraduate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBF521F6FF12009AB2FA /* Undergraduate.swift */; };
+		0CA4EBF821F6FF2E009AB2FA /* Graduate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBF721F6FF2E009AB2FA /* Graduate.swift */; };
+		0CA4EBFB21F70091009AB2FA /* AdminVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBFA21F70091009AB2FA /* AdminVisitor.swift */; };
+		0CDE8BFC21F5EB3200DD3F64 /* DocReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE8BFB21F5EB3200DD3F64 /* DocReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		0C3BB5FE21F4CEBE00FAE618 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C3BB60121F4CEBE00FAE618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3BB60321F4CEBE00FAE618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CA4EBEA21F6E506009AB2FA /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		0CA4EBEC21F6E795009AB2FA /* BookVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookVisitor.swift; sourceTree = "<group>"; };
+		0CA4EBEE21F6E805009AB2FA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0CA4EBF321F6FA38009AB2FA /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		0CA4EBF521F6FF12009AB2FA /* Undergraduate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Undergraduate.swift; sourceTree = "<group>"; };
+		0CA4EBF721F6FF2E009AB2FA /* Graduate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graduate.swift; sourceTree = "<group>"; };
+		0CA4EBFA21F70091009AB2FA /* AdminVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminVisitor.swift; sourceTree = "<group>"; };
+		0CDE8BFB21F5EB3200DD3F64 /* DocReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,9 @@
 		0C3BB5F321F4CEBE00FAE618 /* Library-Info-App */ = {
 			isa = PBXGroup;
 			children = (
+				0CA4EBF921F7007B009AB2FA /* visitor */,
+				0CA4EBE921F6E3FE009AB2FA /* util */,
+				0CDE8BFA21F5E5C400DD3F64 /* domain */,
 				0C3BB5F421F4CEBE00FAE618 /* AppDelegate.swift */,
 				0C3BB5F621F4CEBE00FAE618 /* ViewController.swift */,
 				0C3BB5F821F4CEBE00FAE618 /* Main.storyboard */,
@@ -65,6 +84,35 @@
 				0C3BB5FB21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld */,
 			);
 			path = "Library-Info-App";
+			sourceTree = "<group>";
+		};
+		0CA4EBE921F6E3FE009AB2FA /* util */ = {
+			isa = PBXGroup;
+			children = (
+				0CDE8BFB21F5EB3200DD3F64 /* DocReader.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		0CA4EBF921F7007B009AB2FA /* visitor */ = {
+			isa = PBXGroup;
+			children = (
+				0CA4EBEC21F6E795009AB2FA /* BookVisitor.swift */,
+				0CA4EBFA21F70091009AB2FA /* AdminVisitor.swift */,
+			);
+			name = visitor;
+			sourceTree = "<group>";
+		};
+		0CDE8BFA21F5E5C400DD3F64 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				0CA4EBEE21F6E805009AB2FA /* User.swift */,
+				0CA4EBEA21F6E506009AB2FA /* Book.swift */,
+				0CA4EBF321F6FA38009AB2FA /* Teacher.swift */,
+				0CA4EBF521F6FF12009AB2FA /* Undergraduate.swift */,
+				0CA4EBF721F6FF2E009AB2FA /* Graduate.swift */,
+			);
+			name = domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +190,15 @@
 			files = (
 				0C3BB5F721F4CEBE00FAE618 /* ViewController.swift in Sources */,
 				0C3BB5FD21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld in Sources */,
+				0CDE8BFC21F5EB3200DD3F64 /* DocReader.swift in Sources */,
+				0CA4EBED21F6E795009AB2FA /* BookVisitor.swift in Sources */,
+				0CA4EBF421F6FA38009AB2FA /* Teacher.swift in Sources */,
+				0CA4EBF621F6FF12009AB2FA /* Undergraduate.swift in Sources */,
+				0CA4EBEB21F6E506009AB2FA /* Book.swift in Sources */,
 				0C3BB5F521F4CEBE00FAE618 /* AppDelegate.swift in Sources */,
+				0CA4EBF821F6FF2E009AB2FA /* Graduate.swift in Sources */,
+				0CA4EBEF21F6E805009AB2FA /* User.swift in Sources */,
+				0CA4EBFB21F70091009AB2FA /* AdminVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +362,7 @@
 				0C3BB60821F4CEBE00FAE618 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
