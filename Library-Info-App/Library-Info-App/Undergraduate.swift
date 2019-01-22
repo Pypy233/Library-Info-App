@@ -7,23 +7,7 @@
 //
 
 class Undergraduate: User {
-    private var id: Int
-    
-    private var name: String
-    
-    private var bio: String
-    
-    private var overduePayment: Double
-    
-    init(id: Int, name: String, bio: String, overduePayment: Double) {
-        self.id = id
-        self.name = name
-        self.bio = bio
-        self.overduePayment = overduePayment
-    }
-    
-    override func accept(visitor: BookVisitor) {
+    override func accept(visitor: UserVisitor) {
         visitor.visit(undergraduate: self)
     }
-    
 }

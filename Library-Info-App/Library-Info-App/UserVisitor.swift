@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BookVisitor {
+class UserVisitor {
     
     func visit(teacher: Teacher) {}
     
