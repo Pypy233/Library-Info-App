@@ -15,6 +15,7 @@
 		0C3BB60221F4CEBE00FAE618 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3BB60021F4CEBE00FAE618 /* LaunchScreen.storyboard */; };
 		0C83892421F8034F00BE3BF3 /* BorrowMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C83892321F8034F00BE3BF3 /* BorrowMethod.swift */; };
 		0C83892A21F8097E00BE3BF3 /* BorrowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C83892921F8097E00BE3BF3 /* BorrowService.swift */; };
+		0C83893321F867B100BE3BF3 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C83893221F867B100BE3BF3 /* 1.jpg */; };
 		0C950DC221F75A060064D225 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C950DC121F75A060064D225 /* UserDAO.swift */; };
 		0C950DC421F75B830064D225 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C950DC321F75B830064D225 /* NotificationUtil.swift */; };
 		0CA4EBEB21F6E506009AB2FA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBEA21F6E506009AB2FA /* Book.swift */; };
@@ -41,6 +42,7 @@
 		0C3BB60321F4CEBE00FAE618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C83892321F8034F00BE3BF3 /* BorrowMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowMethod.swift; sourceTree = "<group>"; };
 		0C83892921F8097E00BE3BF3 /* BorrowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowService.swift; sourceTree = "<group>"; };
+		0C83893221F867B100BE3BF3 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		0C950DC121F75A060064D225 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		0C950DC321F75B830064D225 /* NotificationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		0CA4EBEA21F6E506009AB2FA /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				0C3BB5F621F4CEBE00FAE618 /* ViewController.swift */,
 				0C3BB5F821F4CEBE00FAE618 /* Main.storyboard */,
 				0C3BB5FE21F4CEBE00FAE618 /* Assets.xcassets */,
+				0C83893221F867B100BE3BF3 /* 1.jpg */,
 				0C3BB60021F4CEBE00FAE618 /* LaunchScreen.storyboard */,
 				0C3BB60321F4CEBE00FAE618 /* Info.plist */,
 				0C3BB5FB21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C3BB60221F4CEBE00FAE618 /* LaunchScreen.storyboard in Resources */,
+				0C83893321F867B100BE3BF3 /* 1.jpg in Resources */,
 				0C3BB5FF21F4CEBE00FAE618 /* Assets.xcassets in Resources */,
 				0C3BB5FA21F4CEBE00FAE618 /* Main.storyboard in Resources */,
 			);
