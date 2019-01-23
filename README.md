@@ -21,6 +21,32 @@
 
 # Introduction
 
-Design patterns provide us with a general reusable solution to a common design problem.  They are reusable  since they are tested again and again in design problems. My partner and me use desgin patterns to deal with the atcual requirment problems. Our thoughts and part of the implementations are listed as followed. The system is a model app in swift3.x. I strongly recommend that you use Xcode to compile the whole project for it is only a small model without many tests.  
+Design patterns provide us with a general reusable solution to a common design problem.  They are reusable  since they are tested again and again in design problems. My partner and me use desgin patterns to deal with the atcual requirment problems. Our thoughts and part of the implementations are listed as followed. The system is a model app in swift3.x, including a basic UI. I strongly recommend that you use Xcode to compile the whole project for it is only a small model without many tests.  
 
-#  
+
+
+# Design patterns applied 
+
+## Component1
+
+We use **strategy pattern** to meet the requirments in this part. The requirment itself is not complex: Develop different borrowing methods for different user objects and **new methods or adjustments** can be accommodated. 
+
+
+
+## Component2
+
+**Visitor pattern** is applied in this part.
+
+
+
+## Component3
+
+We use **strategy pattern** again in this part, but some differences between component.
+
+
+
+## Component4
+
+Obviously, **observer pattern** matches the requirments very well,
+
+ 
