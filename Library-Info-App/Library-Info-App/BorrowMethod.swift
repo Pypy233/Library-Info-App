@@ -8,38 +8,26 @@
 
 import Foundation
 
-extension BorrowMethod {
-    func commonBorrowMethod() -> BorrowMethod {
-        let method = BorrowMethod(teacherBookLimit: 10, studentBookLimit: 5)
-        return method
-    }
-    
-    func studentBorrowMoreBooksMethod() -> BorrowMethod {
-        let method = BorrowMethod(teacherBookLimit: 10, studentBookLimit: 10)
-        return method
-    }
-    
-    func teacherBorrowMoreBooksMethod() -> BorrowMethod {
-        let method = BorrowMethod(teacherBookLimit: 20, studentBookLimit: 5)
-        return method
+protocol BorrowMethod {
+    func borrowBooks(user: User, bookList: [Book])
+}
+
+class CommonBorrowMethod: BorrowMethod {
+    func borrowBooks(user: User, bookList: [Book]) {
+        print("Common borrow books...")
     }
 }
 
-class BorrowMethod {
-    
-    public var teacherBookLimit: Int
-    
-    public var studentBookLimit: Int
-    
-    init(teacherBookLimit: Int, studentBookLimit: Int) {
-        self.teacherBookLimit = teacherBookLimit
-        self.studentBookLimit = studentBookLimit
+class StudentBorrowMethod: BorrowMethod {
+    var bookLimit = 5
+    func borrowBooks(user: User, bookList: [Book]) {
+        print("Student borrow books...")
     }
-    
-    public func borrowBook(bookList: [Book], user: User) {
-        
-    }
-    
 }
 
-// let testMethod = BorrowMethod(teacherBookLimit: 10, studentBookLimit: 5).studentBorrowMoreBooksMethod().teacherBorrowMoreBooksMethod()
+class TeacherBorrowMethod: BorrowMethod {
+    var bookLimit = 10
+    func borrowBooks(user: User, bookList: [Book]) {
+        print("Teacher borrow books...")
+    }
+}
