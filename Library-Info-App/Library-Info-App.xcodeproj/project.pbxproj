@@ -13,6 +13,8 @@
 		0C3BB5FD21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C3BB5FB21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld */; };
 		0C3BB5FF21F4CEBE00FAE618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3BB5FE21F4CEBE00FAE618 /* Assets.xcassets */; };
 		0C3BB60221F4CEBE00FAE618 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3BB60021F4CEBE00FAE618 /* LaunchScreen.storyboard */; };
+		0C83892421F8034F00BE3BF3 /* BorrowMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C83892321F8034F00BE3BF3 /* BorrowMethod.swift */; };
+		0C83892A21F8097E00BE3BF3 /* BorrowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C83892921F8097E00BE3BF3 /* BorrowService.swift */; };
 		0C950DC221F75A060064D225 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C950DC121F75A060064D225 /* UserDAO.swift */; };
 		0C950DC421F75B830064D225 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C950DC321F75B830064D225 /* NotificationUtil.swift */; };
 		0CA4EBEB21F6E506009AB2FA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4EBEA21F6E506009AB2FA /* Book.swift */; };
@@ -37,6 +39,8 @@
 		0C3BB5FE21F4CEBE00FAE618 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C3BB60121F4CEBE00FAE618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3BB60321F4CEBE00FAE618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C83892321F8034F00BE3BF3 /* BorrowMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowMethod.swift; sourceTree = "<group>"; };
+		0C83892921F8097E00BE3BF3 /* BorrowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowService.swift; sourceTree = "<group>"; };
 		0C950DC121F75A060064D225 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		0C950DC321F75B830064D225 /* NotificationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		0CA4EBEA21F6E506009AB2FA /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 		0C3BB5F321F4CEBE00FAE618 /* Library-Info-App */ = {
 			isa = PBXGroup;
 			children = (
+				0C83892821F8097100BE3BF3 /* sevice */,
 				0C950DC021F759F30064D225 /* dao */,
 				0CA4EBF921F7007B009AB2FA /* visitor */,
 				0CA4EBE921F6E3FE009AB2FA /* util */,
@@ -97,6 +102,14 @@
 			path = "Library-Info-App";
 			sourceTree = "<group>";
 		};
+		0C83892821F8097100BE3BF3 /* sevice */ = {
+			isa = PBXGroup;
+			children = (
+				0C83892921F8097E00BE3BF3 /* BorrowService.swift */,
+			);
+			name = sevice;
+			sourceTree = "<group>";
+		};
 		0C950DC021F759F30064D225 /* dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +123,7 @@
 			children = (
 				0CDE8BFB21F5EB3200DD3F64 /* DocReader.swift */,
 				0C950DC321F75B830064D225 /* NotificationUtil.swift */,
+				0C83892321F8034F00BE3BF3 /* BorrowMethod.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -211,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C83892A21F8097E00BE3BF3 /* BorrowService.swift in Sources */,
 				0C3BB5F721F4CEBE00FAE618 /* ViewController.swift in Sources */,
 				0C3BB5FD21F4CEBE00FAE618 /* Library_Info_App.xcdatamodeld in Sources */,
 				0CDE8BFC21F5EB3200DD3F64 /* DocReader.swift in Sources */,
@@ -218,6 +233,7 @@
 				0CA4EBED21F6E795009AB2FA /* UserVisitor.swift in Sources */,
 				0CA4EBF421F6FA38009AB2FA /* Teacher.swift in Sources */,
 				0C950DC421F75B830064D225 /* NotificationUtil.swift in Sources */,
+				0C83892421F8034F00BE3BF3 /* BorrowMethod.swift in Sources */,
 				0CA4EBF621F6FF12009AB2FA /* Undergraduate.swift in Sources */,
 				0CA4EBEB21F6E506009AB2FA /* Book.swift in Sources */,
 				0C3BB5F521F4CEBE00FAE618 /* AppDelegate.swift in Sources */,
