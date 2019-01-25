@@ -97,7 +97,7 @@ By **factory** **method** **pattern**, our system can return instances of differ
 
 **PS**:In our system's specific implementation, we combine **strategy pattern** with **factory** **method** **pattern**, and initialize it in the factory mode in the context class initialization. 
 
- **Let us explain to you  the advantages of combining the two patterns.**（这里需不需要放上代码截图呀）
+ **Let us explain to you  the advantages of combining the two patterns.**（这里需不需要放上代码截图呀）</br>
 If the Main function is a client, then every time we add an algorithm, we have to modify it once on the client side, adding an else if, causing unnecessary trouble. So, in the current situation, we first know the existing DocReader,PDFReader and EPUBReader three algorithms, but we are not sure which algorithm to use at runtime, and in order to isolate the client and business logic code, we can create the client creation algorithm. The business logic of the class is transferred to the Cotent class and a method of creating an algorithm factory is added.
 
 
