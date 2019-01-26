@@ -9,8 +9,10 @@
 import Foundation
 
 class Teacher: User {
+    
+    
     override func accept(visitor: UserVisitor) {
-        visitor.visit(teacher: self)
+        visitor.visit(user: self)
     }
     
     override func getOverduePayment() -> Double {

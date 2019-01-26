@@ -9,15 +9,27 @@
 import Foundation
 
 class FinanceDepartment: UserVisitor {
-    override func visit(teacher: Teacher) {
+    
+    override func visit(user: User) {
+        switch user.getType() {
+        case .Teacher:
+            visit(teacher: user as! Teacher)
+        case .Graduate:
+            visit(graduate: user as! Graduate)
+        case .Undergraduate:
+            visit(undergraduate: user as! Undergraduate)
+        }
+    }
+
+    func visit(teacher: Teacher) {
         print("Payment: ", teacher.getOverduePayment())
     }
     
-    override func visit(graduate: Graduate) {
+    func visit(graduate: Graduate) {
         print("Payment: ", graduate.getOverduePayment())
     }
     
-    override func visit(undergraduate: Undergraduate) {
+    func visit(undergraduate: Undergraduate) {
         print("Payment: ", undergraduate.getOverduePayment())
     }
 }

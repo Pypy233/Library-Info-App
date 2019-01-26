@@ -8,6 +8,6 @@
 
 class Undergraduate: User {
     override func accept(visitor: UserVisitor) {
-        visitor.visit(undergraduate: self)
+        visitor.visit(user: self)
     }
 }

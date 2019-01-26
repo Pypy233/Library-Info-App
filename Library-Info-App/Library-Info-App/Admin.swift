@@ -16,7 +16,18 @@ class Admin: UserVisitor {
     
     func updateBook(book: Book) {}
     
-    override func visit(teacher: Teacher) {
+    override func visit(user: User) {
+        switch user.getType() {
+            case .Teacher:
+                visit(teacher: user as! Teacher)
+            case .Graduate:
+                visit(graduate: user as! Graduate)
+            case .Undergraduate:
+                visit(undergraduate: user as! Undergraduate)
+        }
+    }
+    
+    func visit(teacher: Teacher) {
         print("Payment:", teacher.getOverduePayment())
         print("Records: ")
         for i in teacher.getRecords() {
@@ -24,7 +35,7 @@ class Admin: UserVisitor {
         }
     }
     
-    override func visit(undergraduate: Undergraduate) {
+    func visit(undergraduate: Undergraduate) {
         print("Payment:", undergraduate.getOverduePayment())
         print("Records: ")
         for i in undergraduate.getRecords() {
@@ -32,7 +43,7 @@ class Admin: UserVisitor {
         }
     }
 
-    override func visit(graduate: Graduate) {
+    func visit(graduate: Graduate) {
         print("Payment:", graduate.getOverduePayment())
         print("Records: ")
         for i in graduate.getRecords() {

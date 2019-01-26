@@ -17,11 +17,11 @@
 
 <center> <h3> Copyright © 2019 NJU.py. All rights reserved.
 
-<center> <h3>All rights reserved.
-
 # Introduction
 
-Design patterns provide us with a general reusable solution to a common design problem.  They are reusable  since they are tested again and again in design problems. My partner and me use desgin patterns to deal with the atcual requirment problems. Our thoughts and part of the implementations are listed as followed. The system is a model app in swift3.x, including a basic UI. I strongly recommend that you use Xcode to compile the whole project for it is only a small model without many tests.  And it is a example for green hands in ios to 
+Design patterns provide us with a general reusable solution to a common design problem.  They are reusable  since they are tested again and again in design problems. My partner and me use desgin patterns to deal with the atcual requirment problems. Our thoughts and part of the implementations are listed as follows. The system is a model app in swift3.x, including a basic UI. I strongly recommend that you use Xcode to compile the whole project for it is only a small model without many tests.  Besides,  it is a great  demo for green hands in ios to learn desgin patterns. We hope the assignment can provide guidance for others in need. 
+
+GitHub site: https://github.com/Pypy233/Library-Info-App
 
 
 
@@ -39,7 +39,7 @@ We use **strategy pattern** to meet the requirments in this part. The requirment
 
 * How we use **strategy pattern**?
 
-According to the requirement, borrowing method is a part of a class that changes frequently or may change in the future. Because of  this reason, we extract the borrowing method as an interface and then include an instance of this object in the class, so that the instance of the class can call the behavior of the class that implements the interface at runtime.
+According to the requirement, borrowing method is a part of a class that changes frequently or may change in the future. For this reason, we extract the borrowing method as an interface and then include an instance of this object in the class, so that the instance of the class can call the behavior of the class that implements the interface at runtime.
 
 There are three objects in the strategy pattern:
 

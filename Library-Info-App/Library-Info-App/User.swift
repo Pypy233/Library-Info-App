@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum UserType {
+    case Teacher, Undergraduate, Graduate
+}
+
 class User {
     
     private var id: Int
@@ -18,11 +22,14 @@ class User {
     
     private var overduePayment: Double
     
-    init(id: Int, name: String, bio: String, overduePayment: Double) {
+    private var type: UserType
+    
+    init(id: Int, name: String, bio: String, overduePayment: Double, type: UserType) {
         self.id = id
         self.name = name
         self.bio = bio
         self.overduePayment = overduePayment
+        self.type = type
     }
     
     public func accept(visitor: UserVisitor) {
@@ -40,6 +47,10 @@ class User {
     
     public func getId() -> Int {
         return self.id
+    }
+    
+    public func getType() -> UserType {
+        return self.type
     }
     
 }

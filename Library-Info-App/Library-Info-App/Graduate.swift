@@ -10,6 +10,6 @@ import Foundation
 
 class Graduate: User {
     override func accept(visitor: UserVisitor) {
-        visitor.visit(graduate: self)
+        visitor.visit(user: self)
     }
 }
