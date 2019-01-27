@@ -55,7 +55,7 @@ Because of using **strategy pattern**, we can dynamically change the behavior of
 
 ## Component2
 
-**Visitor pattern** is applied in this part.
+**Visitor pattern** is applied in this part firstly. Because of the requirement 'more user types will be added', we use **factory** **method** **pattern** to solve it.
 
 
 
@@ -85,7 +85,7 @@ Because of using **strategy pattern**, we can dynamically change the behavior of
 
 Besides, we also think **factory** **method** **pattern** is suitable to Component3. Compared to **strategy pattern**, we do insist that **strategy pattern** is more suitable so we select **strategy pattern** and abandon **factory** **method** **pattern**. Next, we will explain to you the benefits of **factory** **method** **pattern** and reasons why it is not as good as **strategy pattern**.
 
-* Benefits of **factory** **method** **pattern**
+* Benefits of **factory** **method** **pattern**.
 
 
 By **factory** **method** **pattern**, our system can return instances of different Reader classes depending on the parameters. **Factory** **method** **pattern** specifically defines a ReaderFactory class to be responsible for creating instances of Reader classes, and the created instances have a common parent class(In our system , it's Reader class).The factory class contains the necessary judgment logic to determine when to create an instance of the Reader class. In that case,the client can dispense with the responsibility of directly creating the Reader object and only "consume" the Reader class.**Factory** **method** **pattern** implements the separation of responsibilities through this approach, which provides specialized factory classes for creating specific Reader objects.The client does not need to know the class name of the specific Reader class created, and only needs to know the parameters corresponding to the specific Reader class.  In all,  Separating the creation of a Reader from the business processing of the Reader itself make our system reduce the degree of coupling of the system, making it relatively easy to modify both. 
@@ -103,6 +103,16 @@ If the Main function is a client, then every time we add an algorithm, we have t
 
 ## Component4
 
-Obviously, **observer pattern** matches the requirments very well,
+Obviously, **observer pattern** matches the requirments very well. According to the requirement 'administrators can receive the	automatic notification	once a user’s	info is updated', we can easily  think of using **observer pattern** to meet this requirement.
 
- 
+- Why we use **observer pattern** ?
+
+**observer pattern** is suitable in these two following scenes. For one thing,other objects need to be notified when the data of an object is updated, but this object does not want to be tightly coupled with those objects that are notified.For the other,when an object's data is updated, the object needs to have other objects update their own data, but the object does not know how many objects need to update the data. According to the requirement, user is subject and administrator is observer obviously. For future development,once we want to add a new observer,we should only create a new class implementing observer interface and make it become a subject's observer which decouples subjects with observers.
+
+- How we use **observer pattern**?
+
+ As we develop our system with language **'swift'** and use swift's built-in interface , our implementation has something different with **observer pattern** applied in **java**.(后面需要添加一下具体实现)
+
+- Advantanges of using **observer pattern**?
+
+Because of using **observer pattern**, different observers triggering responses are encapsulated in separate objects so that they can be changed and reused independently of each other. For adding a new observer , we should only create a new class implementing observer interface and make it become a subject's observer. For modifying a observer's triggering response, what we need to do is to modify coresponding specific observer class.Whether adding a new observer or modifying a observer will not affect code in subject which decouples subjects with observers.
