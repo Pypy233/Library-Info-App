@@ -57,7 +57,7 @@ Because of using **strategy pattern**, we can dynamically change the behavior of
 
 **Visitor pattern** is applied in this part firstly. Because of the requirement 'more user types will be added', we use **factory** **method** **pattern** to solve it. It is a hard process: code structure itself is a bit complex, not to mention the thinking process. 
 
-At first, we applied the **visitor pattern** to the requirment. Obviously, the visitor pattern is a good choice for permission control. However, there is a need that "more user types can be added". It means that when a new user type is added, we should add a new visitor and implement it's behavior. **Adding bottom element** in the visitor pattern is a **disaster.** We discuessed it for 2 days. 
+At first, we applied the **visitor pattern** to the requirment. Obviously, the visitor pattern is a good choice for permission control. However, there is a need that **"more user types can be added"**. It means that when a new user type is added, we should add a new visitor and implement it's behavior. For future development,  we have to modify UserVisitor interface because of new user types,but as we all know, **Adding bottom element** in the visitor pattern is a **disaster.** We discuessed it for 2 days. 
 
 We find the **ACL pattern** is used to deal with the permission control problem. But it is not practical because it focuses more on the design of database and the entity is more complex than we are dealing with. So we abandoned it.
 
@@ -69,7 +69,7 @@ We find the **ACL pattern** is used to deal with the permission control problem.
 
 
 
-ComDubh suggested that I were overengineering and should only overwrite the ``setAccess`` method. But after a dicussion with my paterner, we finally determined **visitor pattern plus factory pattern**. For the visitor itself is a simple factory so that the code will not be so terrible. To some extent, we think it is not a  bad choice.
+ComDubh suggested that I were overengineering and should only overwrite the ``setAccess`` method. But after a dicussion with my paterner,to make UserVisitor interface more stable, we finally determined **visitor pattern plus factory pattern**. For the visitor itself is a simple factory so that the code will not be so terrible. To some extent, we think it is not a  bad choice.
 
 In the [UserVisitor.swift](Library-Info-App/Library-Info-App/UserVisitor.swift), the class is:
 
@@ -101,7 +101,7 @@ It proves to be pratical to add user type and control the permission. That is wh
 
 ## Component3
 
-We use **strategy pattern** again in this part, but some differences between component.
+We use **strategy pattern** again in this part, but some differences between component.We also think of  **factory** **method** **pattern** but it is not better than **strategy pattern**. Next, We will explain to you these things.
 
 - Why we use **strategy pattern** ?
 
@@ -220,6 +220,6 @@ Because of using **observer pattern**, different observers triggering responses 
 
 # Contribution
 
-## 161250096 Yu Pan
+## 161250096 Yu Pan      Partner:161250029 Yu Ge
 
 I set up the basic arthiecture of the project and write the code about component1, 2. I discussed with my partner about the design pattern. Also, I reviewed his code about the other two components and class diagram.
