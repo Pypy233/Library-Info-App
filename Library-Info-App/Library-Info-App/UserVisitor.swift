@@ -10,12 +10,6 @@ import Foundation
 
 class UserVisitor {
     
-//    func visit(teacher: Teacher) {}
-//    
-//    func visit(undergraduate: Undergraduate) {}
-//    
-//    func visit(graduate: Graduate) {}
-    
     func visit(user: User) {}
     
 }

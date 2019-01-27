@@ -19,15 +19,15 @@
 
 # Introduction
 
-Design patterns provide us with a general reusable solution to a common design problem.  They are reusable  since they are tested again and again in design problems. My partner and me use desgin patterns to deal with the atcual requirment problems. Our thoughts and part of the implementations are listed as follows. The system is a model app in swift3.x, including a basic UI. I strongly recommend that you use Xcode to compile the whole project for it is only a small model without many tests.  Besides,  it is a great  demo for green hands in ios to learn desgin patterns. We hope the assignment can provide guidance for others in need. 
+Design patterns provide us with a general reusable solution to a common design problem.  They are reusable  since they are tested again and again in design problems. My partner and me use desgin patterns to deal with the atcual requirment problems. Our thoughts and part of the implementations are listed as follows. 
+
+The system is a model app in swift3.x, including a basic UI. A typical **MVC model**. I strongly recommend that you use **Xcode** to execute the whole project for it is only a small model without many tests.  Besides,  it is a great  demo for green hands in ios to learn desgin patterns. We hope the assignment can provide guidance for others in need. All the **class digram** can be seen in the folder **[class diagram](class diagram)**.
 
 GitHub site: https://github.com/Pypy233/Library-Info-App
 
 
 
 # Design patterns applied 
-
-# 
 
 ## Component1
 
@@ -55,9 +55,49 @@ Because of using **strategy pattern**, we can dynamically change the behavior of
 
 ## Component2
 
-**Visitor pattern** is applied in this part firstly. Because of the requirement 'more user types will be added', we use **factory** **method** **pattern** to solve it.
+**Visitor pattern** is applied in this part firstly. Because of the requirement 'more user types will be added', we use **factory** **method** **pattern** to solve it. It is a hard process: code structure itself is a bit complex, not to mention the thinking process. 
+
+At first, we applied the **visitor pattern** to the requirment. Obviously, the visitor pattern is a good choice for permission control. However, there is a need that "more user types can be added". It means that when a new user type is added, we should add a new visitor and implement it's behavior. **Adding bottom element** in the visitor pattern is a **disaster.** We discuessed it for 2 days. 
+
+We find the **ACL pattern** is used to deal with the permission control problem. But it is not practical because it focuses more on the design of database and the entity is more complex than we are dealing with. So we abandoned it.
+
+ Finally, I have no better choice and I posted the problem on the stackOverFlow. I got the answer, the screenshot is as follows:
 
 
+
+![class diagram/faq.png](class diagram/faq.png)
+
+
+
+ComDubh suggested that I were overengineering and should only overwrite the ``setAccess`` method. But after a dicussion with my paterner, we finally determined **visitor pattern plus factory pattern**. For the visitor itself is a simple factory so that the code will not be so terrible. To some extent, we think it is not a  bad choice.
+
+In the [UserVisitor.swift](Library-Info-App/Library-Info-App/UserVisitor.swift), the class is:
+
+```
+class UserVisitor {
+    
+    func visit(user: User) {}
+    
+}
+```
+
+In the [Admin.swift](Library-Info-App/Library-Info-App/Admin.swift)
+
+```swift
+override func visit(user: User) {
+        switch user.getType() {
+            case .Teacher:
+                visit(teacher: user as! Teacher)
+            case .Graduate:
+                visit(graduate: user as! Graduate)
+            case .Undergraduate:
+                visit(undergraduate: user as! Undergraduate)
+        }
+    }
+
+```
+
+It proves to be pratical to add user type and control the permission. That is why we choose the combined design patterns.
 
 ## Component3
 
@@ -65,7 +105,7 @@ We use **strategy pattern** again in this part, but some differences between com
 
 - Why we use **strategy pattern** ?
 
-**strategy pattern**  is an object behavioral pattern, mainly for a set of algorithms, each of which is encapsulated into a separate class with a common interface, so that they can be replaced with each other. **strategy pattern** allows the algorithm to change without affecting the client. In general, **strategy pattern** is useful when an application needs to implement a particular service or function, and the program has multiple implementations. According to the requirement, document formats reading is a part of a class that changes frequently or may change in the future. It is suitable to encapsulate document formats reading into a separate class with a common interface for future extension.
+**Strategy pattern**  is an object behavioral pattern, mainly for a set of algorithms, each of which is encapsulated into a separate class with a common interface, so that they can be replaced with each other. **strategy pattern** allows the algorithm to change without affecting the client. In general, **strategy pattern** is useful when an application needs to implement a particular service or function, and the program has multiple implementations. According to the requirement, document formats reading is a part of a class that changes frequently or may change in the future. It is suitable to encapsulate document formats reading into a separate class with a common interface for future extension.
 
 - How we use **strategy pattern**?
 
@@ -97,7 +137,43 @@ By **factory** **method** **pattern**, our system can return instances of differ
 
 **PS**:In our system's specific implementation, we combine **strategy pattern** with **factory** **method** **pattern**, and initialize it in the factory mode in the context class initialization. 
 
- **Let us explain to you  the advantages of combining the two patterns.**（这里需不需要放上代码截图呀）</br>
+ **Let us explain to you  the advantages of combining the two patterns.**
+
+- In the [DocReader.swift](Library-Info-App/Library-Info-App/DocReader.swift), method like read doc is:
+
+```swift
+class DocReader: Reader {
+    func read(filename: String) -> String {
+        print("Reading doc...")
+        return "DOC"
+    }
+}
+
+```
+
+- And the type transferred is:
+
+  ```swift
+  class ReaderContext {
+      private var reader: Reader?
+      init(docType: DocType) {
+          switch docType {
+          case .DOC:
+              reader = DocReader()
+          case .PDF:
+              reader = PDFReader()
+          case .EPUB:
+              reader = EPUBReader()
+          }
+      }
+      
+      func readDoc(filename: String) -> String {
+          return (reader?.read(filename: filename)) ?? ""
+      }
+  }
+  
+  ```
+
 If the Main function is a client, then every time we add an algorithm, we have to modify it once on the client side, adding an else if, causing unnecessary trouble. So, in the current situation, we first know the existing DocReader,PDFReader and EPUBReader three algorithms, but we are not sure which algorithm to use at runtime, and in order to isolate the client and business logic code, we can create the client creation algorithm. The business logic of the class is transferred to the Cotent class and a method of creating an algorithm factory is added.
 
 
@@ -111,8 +187,39 @@ Obviously, **observer pattern** matches the requirments very well. According to 
 
 - How we use **observer pattern**?
 
- As we develop our system with language **'swift'** and use swift's built-in interface , our implementation has something different with **observer pattern** applied in **java**.(后面需要添加一下具体实现)
+ As we develop our system with language **swift** and use swift's built-in interface , our implementation has something different with **observer pattern** applied in **java**.
+
+Apple has the great experience of using observer pattern because the daily notification is based on this. We implement it by using the notification inteface. In the [NotificationUtil.swift](Library-Info-App/Library-Info-App/NotificationUtil.swift), I construct the util:
+
+``````swift
+class NotificationUtil: NSObject {
+    func sendInfoUpdatedMessage(msg: String) {
+        let userInfo = ["msg": msg]
+        let notification = NSNotification.init(name: NSNotification.Name(rawValue: "User"), object: self, userInfo: userInfo)
+        // Post the notification
+        NotificationCenter.default.post(notification as Notification)
+    }
+}
+
+``````
+
+In the [UserDAO.swift](Library-Info-App/Library-Info-App/UserDAO.swift), the method ``updateUser`` contains the notification method, and it shows great usage:
+
+```swift
+ public func updateUser(user: User) {
+        // Update
+        NotificationUtil().sendInfoUpdatedMessage(msg: "User info updated")
+    }
+```
 
 - Advantanges of using **observer pattern**?
 
 Because of using **observer pattern**, different observers triggering responses are encapsulated in separate objects so that they can be changed and reused independently of each other. For adding a new observer , we should only create a new class implementing observer interface and make it become a subject's observer. For modifying a observer's triggering response, what we need to do is to modify coresponding specific observer class.Whether adding a new observer or modifying a observer will not affect code in subject which decouples subjects with observers.
+
+
+
+# Contribution
+
+## 161250096 Yu Pan
+
+I set up the basic arthiecture of the project and write the code about component1, 2. I discussed with my partner about the design pattern. Also, I reviewed his code about the other two components and class diagram.
