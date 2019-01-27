@@ -10,7 +10,7 @@
 <center> <h1>In Software Engineering Institute
 
 <center> <h2>by 161250096 Yu Pan<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;161250029 Yu Ge
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;161250029 Yu Ge
 </center>
 
 <center> <h3>Mail: panyuyuyu@outlook.com
@@ -65,7 +65,7 @@ We find the **ACL pattern** is used to deal with the permission control problem.
 
 
 
-![class diagram/faq.png](class diagram/faq.png)
+![class%20diagram/faq.png](class%20diagram/faq.png)
 
 
 
