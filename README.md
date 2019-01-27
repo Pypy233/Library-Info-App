@@ -69,7 +69,7 @@ We find the **ACL pattern** is used to deal with the permission control problem.
 
 
 
-ComDubh suggested that I were overengineering and should only overwrite the ``setAccess`` method. But after a dicussion with my paterner,to make UserVisitor interface more stable, we finally determined **visitor pattern plus factory pattern**. For the visitor itself is a simple factory so that the code will not be so terrible. To some extent, we think it is not a  bad choice.
+ComDubh suggested that I were overengineering and should only overwrite the ``setAccess`` method. But after a dicussion with my paterner,to make UserVisitor interface more stable, we finally determined **visitor pattern plus factory method pattern**. For the visitor itself is a simple factory so that the code will not be so terrible. To some extent, we think it is not a  bad choice.
 
 In the [UserVisitor.swift](Library-Info-App/Library-Info-App/UserVisitor.swift), the class is:
 
@@ -174,7 +174,7 @@ class DocReader: Reader {
   
   ```
 
-If the Main function is a client, then every time we add an algorithm, we have to modify it once on the client side, adding an else if, causing unnecessary trouble. So, in the current situation, we first know the existing DocReader,PDFReader and EPUBReader three algorithms, but we are not sure which algorithm to use at runtime, and in order to isolate the client and business logic code, we can create the client creation algorithm. The business logic of the class is transferred to the Cotent class and a method of creating an algorithm factory is added.
+If the Main function is a client, then every time we add an algorithm, we have to modify it once on the client side, adding an else if, causing unnecessary trouble. So, in the current situation, we first know the existing DocReader,PDFReader and EPUBReader three algorithms, but we are not sure which algorithm to use at runtime, and in order to isolate the client and business logic code, we can create the client creation algorithm. The business logic of the class is transferred to the ReaderContext class and a method of creating an algorithm factory is added.
 
 
 ## Component4
@@ -220,6 +220,13 @@ Because of using **observer pattern**, different observers triggering responses 
 
 # Contribution
 
-## 161250096 Yu Pan      Partner:161250029 Yu Ge
+## 161250096 Yu Pan      
 
 I set up the basic arthiecture of the project and write the code about component1, 2. I discussed with my partner about the design pattern. Also, I reviewed his code about the other two components and class diagram.
+
+
+
+
+## 161250029 Yu Ge      
+
+I write the code about component3, 4. I discussed with my partner about the design pattern. Also, I reviewed his code about the other two components and class diagram. For these four components，Component2 takes my partner and me much time but we learn a lot such as Pattern Combination by dealing with it.
